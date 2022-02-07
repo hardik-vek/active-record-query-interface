@@ -1,0 +1,47 @@
+<div class="center">
+    <h1>Employee Listing</h1>
+</div>
+
+<center>
+
+<table>
+    <th>Search Employee:</th>
+    <th>Search</th>
+    <%= form_tag employees_path, method: :get do %>
+        <tr>
+            <td><%= email_field_tag :search, params[:search] %></td>
+            <td><%= submit_tag "search" %></td>
+        <% end %>
+        </tr>
+</table>
+
+</center>
+
+<center>
+
+<table>
+
+    <th>First_name</th>
+    <th>Last_name</th>
+    <th>Email</th>
+    <th colspan='3' >Actions</th>
+
+    <% @employees.each do |employee| %>
+        <tr>
+            <td><%= employee.first_name %></td>
+            <td><%= employee.last_name %></td>
+            <td><%= employee.email %></td>
+            <td><%= button_to "Show", employee_path(employee), method: :get %></td>
+            <td><%= button_to "Edit", edit_employee_path(employee), method: :get %></td>
+            <td><%= button_to "Delete", employee_path(employee), method: :delete %></td>
+        </tr>
+    <% end %>
+</table>
+</center>
+    <p class="center">
+        <%= link_to "New employee", new_employee_path %>
+    </p>
+    <p class="center">
+        <%= link_to "Display Query", employees_display_path %>
+    </p>
+
