@@ -28,7 +28,6 @@ class EmployeesController < ApplicationController
 
   def update
     if @employee.update(input_params)
-      # if @employee.update_with_conflict_validation(input_params)
       flash[:notice] = "Employee Updateed sucessfully"
       redirect_to employees_path
     else

@@ -1,5 +1,5 @@
+# frozen_string_literal: true
 Rails.application.routes.draw do
-  # root 'employees#display'
   root 'employees#index'
   get 'employees/display'
   resources :employees
@@ -8,3 +8,4 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 end
+

@@ -9,8 +9,9 @@
 # migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
+# frozen_string_literal: true
 
-ActiveRecord::Schema.define(version: 2022_02_07_064213) do
+ActiveRecord::Schema.define(version: 2022_02_09_052211) do
 
   create_table "employees", force: :cascade do |t|
     t.string "first_name"
@@ -22,7 +23,7 @@ ActiveRecord::Schema.define(version: 2022_02_07_064213) do
     t.integer "salary"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "lock_version", default: 0, null: false
   end
 
 end
+

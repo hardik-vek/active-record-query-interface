@@ -12,7 +12,7 @@
     <th>Full_time_avilable</th>
     <th>Salary</th>
 
-<% Employee.where("age > 20").and(Employee.where("age < 40")).each do |employee| %>
+    <% Employee.where("age > 20").and(Employee.where("age < 40")).each do |employee| %>
         <tr>
             <td><%= employee.first_name %></td>
             <td><%= employee.last_name %></td>
@@ -37,7 +37,7 @@
     <th>Full_time_avilable</th>
     <th>Salary</th>
 
-<% Employee.where("full_time_avilable=true").each do |employee| %>
+    <% Employee.where("full_time_avilable=true").each do |employee| %>
         <tr>
             <td><%= employee.first_name %></td>
             <td><%= employee.last_name %></td>
@@ -62,7 +62,7 @@
     <th>Full_time_avilable</th>
     <th>Salary</th>
 
-<% Employee.where("no_of_order=5").and(Employee.where("age > 25")).each do |employee| %>
+    <% Employee.where("no_of_order=5").and(Employee.where("age > 25")).each do |employee| %>
         <tr>
             <td><%= employee.first_name %></td>
             <td><%= employee.last_name %></td>
@@ -87,7 +87,7 @@
     <th>Full_time_avilable</th>
     <th>Salary</th>
 
-<% Employee.where("created_at < ?", 2.days.ago).each do |employee| %>
+    <% Employee.where("created_at < ?", 2.days.ago).each do |employee| %>
         <tr>
             <td><%= employee.first_name %></td>
             <td><%= employee.last_name %></td>
@@ -112,7 +112,7 @@
     <th>Full_time_avilable</th>
     <th>Salary</th>
 
-<% Employee.where("no_of_order=5").or(Employee.where("age < 25")).each do |employee| %>
+    <% Employee.where("no_of_order=5").or(Employee.where("age < 25")).each do |employee| %>
         <tr>
             <td><%= employee.first_name %></td>
             <td><%= employee.last_name %></td>
@@ -137,7 +137,7 @@
     <th>Full_time_avilable</th>
     <th>Salary</th>
 
-<% Employee.order("age desc").each do |employee| %>
+    <% Employee.order("age desc").each do |employee| %>
         <tr>
             <td><%= employee.first_name %></td>
             <td><%= employee.last_name %></td>
@@ -162,7 +162,7 @@
     <th>Full_time_avilable</th>
     <th>Salary</th>
 
-<% Employee.order("no_of_order asc").each do |employee| %>
+    <% Employee.order("no_of_order asc").each do |employee| %>
         <tr>
             <td><%= employee.first_name %></td>
             <td><%= employee.last_name %></td>
@@ -187,7 +187,7 @@
     <th>Full_time_avilable</th>
     <th>Salary</th>
 
-<% Employee.where("salary > 45000").each do |employee| %>
+    <% Employee.where("salary > 45000").each do |employee| %>
         <tr>
             <td><%= employee.first_name %></td>
             <td><%= employee.last_name %></td>
@@ -212,7 +212,7 @@
     <th>Full_time_avilable</th>
     <th>Salary</th>
 
-<% Employee.where("no_of_order > 5").group(:no_of_order).each do |employee| %>
+    <% Employee.where("no_of_order > 5").group(:no_of_order).each do |employee| %>
         <tr>
             <td><%= employee.first_name %></td>
             <td><%= employee.last_name %></td>
@@ -238,7 +238,7 @@
     <th>Full_time_avilable</th>
     <th>Salary</th>
 
-<% Employee.where("no_of_order > 5").limit(5).unscope(:limit).each do |employee| %>
+    <% Employee.where("no_of_order > 5").limit(5).unscope(:limit).each do |employee| %>
         <tr>
             <td><%= employee.first_name %></td>
             <td><%= employee.last_name %></td>
@@ -263,7 +263,7 @@
     <th>Full_time_avilable</th>
     <th>Salary</th>
 
-<% Employee.where("no_of_order > 5").limit(5).only(:where).each do |employee| %>
+    <% Employee.where("no_of_order > 5").limit(5).only(:where).each do |employee| %>
         <tr>
             <td><%= employee.first_name %></td>
             <td><%= employee.last_name %></td>
@@ -282,34 +282,9 @@
 
     <th>Email</th>
 
-<% Employee.select(:first_name).reselect(:email).each do |employee| %>
+    <% Employee.select(:first_name).reselect(:email).each do |employee| %>
         <tr>
             <td><%= employee.email %></td>
-        </tr>
-    <% end %>
-</table>
-
-<h3>5) Example for reverse_order</h3>
-
-<table>
-
-    <th>First_name</th>
-    <th>Last_name</th>
-    <th>Email</th>
-    <th>Age</th>
-    <th>No_of_order</th>
-    <th>Full_time_avilable</th>
-    <th>Salary</th>
-
-<% Employee.order("age desc").reverse_order.each do |employee| %>
-        <tr>
-            <td><%= employee.first_name %></td>
-            <td><%= employee.last_name %></td>
-            <td><%= employee.email %></td>
-            <td><%= employee.age %></td>
-            <td><%= employee.no_of_order %></td>
-            <td><%= employee.full_time_avilable %></td>
-            <td><%= employee.salary %></td>
         </tr>
     <% end %>
 </table>
@@ -326,7 +301,7 @@
     <th>Full_time_avilable</th>
     <th>Salary</th>
 
-<% Employee.order("age desc").reorder("age asc").each do |employee| %>
+    <% Employee.order("age desc").reorder("age asc").each do |employee| %>
         <tr>
             <td><%= employee.first_name %></td>
             <td><%= employee.last_name %></td>
@@ -338,3 +313,29 @@
         </tr>
     <% end %>
 </table>
+
+<h3>5) Example for reverse_order</h3>
+
+<table>
+
+    <th>First_name</th>
+    <th>Last_name</th>
+    <th>Email</th>
+    <th>Age</th>
+    <th>No_of_order</th>
+    <th>Full_time_avilable</th>
+    <th>Salary</th>
+
+    <% Employee.order("age desc").reverse_order.each do |employee| %>
+        <tr>
+            <td><%= employee.first_name %></td>
+            <td><%= employee.last_name %></td>
+            <td><%= employee.email %></td>
+            <td><%= employee.age %></td>
+            <td><%= employee.no_of_order %></td>
+            <td><%= employee.full_time_avilable %></td>
+            <td><%= employee.salary %></td>
+        </tr>
+    <% end %>
+</table>
+
